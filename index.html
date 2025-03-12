@@ -52,25 +52,23 @@
     playRound(getHumanChoice(), getComputerChoice());
 
     function playgame() {
-      for (let i = 0; i <= 5; i++) {
+      for (let i = 0; i < 5; i++) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
       }
       if (humanScore > computerScore)
         console.log(
-          `You won! Your score: ${humanScore} Computer score: ${computerScore}`
+          "You won! Your score: ${humanScore} Computer score: ${computerScore}"
         );
       else if (computerScore > humanScore)
         console.log(
-          `You lost! Your score: ${humanScore} Computer score: ${computerScore}`
+          "You lost! Your score: ${humanScore} Computer score: ${computerScore}"
         );
       else
         console.log(
-          `It's a tie! Your score: ${humanScore} Computer score: ${computerScore}`
+          "It's a tie! Your score: ${humanScore} Computer score: ${computerScore}"
         );
-      humanScore = 0;
-      computerScore = 0;
     }
     playgame();
   </script>
