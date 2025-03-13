@@ -10,6 +10,7 @@
   <script>
     let humanScore = 0;
     let computerScore = 0;
+
     function getComputerChoice() {
       let randomNum = Math.floor(Math.random() * 3);
       if (randomNum === 0) {
@@ -33,15 +34,18 @@
       const humanSelection = humanChoice.toLowerCase();
       const computerSelection = computerChoice;
       if (humanChoice === computerChoice) {
+        console.log("You tie");
         console.log("You tie -__-");
       } else if (
         (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "scissors" && computerChoice === "paper") ||
         (humanChoice === "paper" && computerChoice === "rock")
       ) {
+        console.log("You win");
         console.log("You win :)");
         humanScore++;
       } else {
+        console.log("you lose");
         console.log(" You lose");
         computerScore++;
       }
@@ -52,18 +56,18 @@
     playRound(getHumanChoice(), getComputerChoice());
 
     function playgame() {
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i <= 5; i++) {
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
       }
       if (humanScore > computerScore)
         console.log(
-          "You won! Your score: ${humanScore} Computer score: ${computerScore}"
+          `You won! Your score: ${humanScore} Computer score: ${computerScore}`
         );
       else if (computerScore > humanScore)
         console.log(
-          "You lost! Your score: ${humanScore} Computer score: ${computerScore}"
+          `You lost! Your score: ${humanScore} Computer score: ${computerScore}`
         );
       else
         console.log(
